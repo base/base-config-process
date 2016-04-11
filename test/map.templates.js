@@ -1,17 +1,17 @@
 'use strict';
 
 require('mocha');
+var path = require('path');
 var assert = require('assert');
 var Base = require('base');
 var fields = require('..');
-var config = require('base-config');
 var assemble = require('assemble-core');
 var app;
 
 describe('.map.views (errors)', function() {
   beforeEach(function() {
     app = new Base();
-    app.use(config());
+    app.isApp = true;
     app.use(fields());
   });
 
@@ -19,7 +19,7 @@ describe('.map.views (errors)', function() {
     app.config.process({
       views: {
         foos: './test/fixtures/templates/*',
-        bars: './test/fixtures/templates/*',
+        bars: './test/fixtures/templates/*'
       }
     }, function(err) {
       assert.equal(err.message, 'expected app.create to be a function');
@@ -31,7 +31,6 @@ describe('.map.views (errors)', function() {
 describe('.map.templates', function() {
   beforeEach(function() {
     app = assemble();
-    app.use(config());
     app.use(fields());
   });
 
@@ -40,7 +39,7 @@ describe('.map.templates', function() {
       app.config.process({
         templates: {
           posts: './test/fixtures/templates/*',
-          pages: './test/fixtures/templates/*',
+          pages: './test/fixtures/templates/*'
         }
       }, function(err, config) {
         if (err) return cb(err);
@@ -56,7 +55,7 @@ describe('.map.templates', function() {
       app.config.process({
         templates: {
           posts: ['./test/fixtures/templates/*'],
-          pages: ['./test/fixtures/templates/*'],
+          pages: ['./test/fixtures/templates/*']
         }
       }, function(err, config) {
         if (err) return cb(err);
@@ -78,7 +77,7 @@ describe('.map.templates', function() {
       app.config.process({
         templates: {
           foos: './test/fixtures/templates/*',
-          bars: './test/fixtures/templates/*',
+          bars: './test/fixtures/templates/*'
         }
       }, function(err, config) {
         if (err) return cb(err);
@@ -103,7 +102,7 @@ describe('.map.templates', function() {
       app.config.process({
         templates: {
           foos: ['./test/fixtures/templates/*'],
-          bars: ['./test/fixtures/templates/*'],
+          bars: ['./test/fixtures/templates/*']
         }
       }, function(err, config) {
         if (err) return cb(err);

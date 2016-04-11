@@ -4,7 +4,6 @@ require('mocha');
 require('engine-base');
 var assert = require('assert');
 var Base = require('base');
-var config = require('base-config');
 var assemble = require('assemble-core');
 var fields = require('..');
 var app;
@@ -12,7 +11,7 @@ var app;
 describe('.map.engine (errors)', function() {
   beforeEach(function() {
     app = new Base();
-    app.use(config());
+    app.isApp = true;
     app.use(fields());
   });
 
@@ -31,7 +30,6 @@ describe('.map.engine (errors)', function() {
 describe('.map.engine', function() {
   beforeEach(function() {
     app = assemble();
-    app.use(config());
     app.use(fields());
   });
 

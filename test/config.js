@@ -10,6 +10,7 @@ describe('.config', function() {
   describe('plugin', function() {
     it('should only register the plugin once', function(cb) {
       base = new Base();
+      base.isApp = true;
       base.registered = {};
 
       var count = 0;

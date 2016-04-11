@@ -4,14 +4,13 @@ require('mocha');
 var assert = require('assert');
 var fields = require('..');
 var Base = require('base');
-var config = require('base-config');
 var assemble = require('assemble-core');
 var app;
 
 describe('.map.asyncHelpers (errors)', function() {
   beforeEach(function() {
     app = new Base();
-    app.use(config());
+    app.isApp = true;
     app.use(fields());
   });
 
@@ -31,7 +30,6 @@ describe('.map.asyncHelpers (errors)', function() {
 describe('.map.asyncHelpers', function() {
   beforeEach(function() {
     app = assemble();
-    app.use(config());
     app.use(fields());
   });
 
@@ -48,6 +46,7 @@ describe('.map.asyncHelpers', function() {
           upper: function() {}
         }
       }, function(err) {
+        if (err) return cb(err);
         assert(app._.helpers.async.hasOwnProperty('lower'));
         assert(app._.helpers.async.hasOwnProperty('upper'));
         cb();
@@ -63,6 +62,7 @@ describe('.map.asyncHelpers', function() {
       };
 
       app.config.process(config, function(err) {
+        if (err) return cb(err);
         assert(app._.helpers.async.hasOwnProperty('lower'));
         assert(app._.helpers.async.hasOwnProperty('upper'));
         cb();
@@ -75,6 +75,7 @@ describe('.map.asyncHelpers', function() {
       };
 
       app.config.process(config, function(err) {
+        if (err) return cb(err);
         assert(app._.helpers.async.hasOwnProperty('lower'));
         assert(app._.helpers.async.hasOwnProperty('upper'));
         cb();
@@ -87,6 +88,7 @@ describe('.map.asyncHelpers', function() {
       };
 
       app.config.process(config, function(err) {
+        if (err) return cb(err);
         assert(app._.helpers.async.hasOwnProperty('example'));
         assert(app._.helpers.async.hasOwnProperty('coverage'));
         cb();
@@ -99,6 +101,7 @@ describe('.map.asyncHelpers', function() {
       };
 
       app.config.process(config, function(err) {
+        if (err) return cb(err);
         assert(app._.helpers.async.hasOwnProperty('lower'));
         assert(app._.helpers.async.hasOwnProperty('upper'));
         cb();

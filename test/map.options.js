@@ -3,14 +3,12 @@
 require('mocha');
 var assert = require('assert');
 var fields = require('..');
-var config = require('base-config');
 var assemble = require('assemble-core');
 var app;
 
 describe('.map.options', function() {
   beforeEach(function() {
     app = assemble();
-    app.use(config());
     app.use(fields());
   });
 

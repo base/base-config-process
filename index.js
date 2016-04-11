@@ -17,12 +17,11 @@ module.exports = function(options) {
     var opts = createOpts(app, options);
     var schema;
 
-    if (typeof this.config === 'undefined') {
-      this.use(utils.config(opts));
-    }
-
     if (typeof this.option === 'undefined') {
       this.use(utils.option(opts));
+    }
+    if (typeof this.config === 'undefined') {
+      this.use(utils.config(opts));
     }
 
     Object.defineProperty(this.config, 'schema', {

@@ -3,14 +3,13 @@
 require('mocha');
 var assert = require('assert');
 var schema = require('..');
-var config = require('base-config');
 var Base = require('base');
 var base;
 
 describe('.map.related', function() {
   beforeEach(function() {
     base = new Base();
-    base.use(config());
+    base.isApp = true;
     base.use(schema());
   });
 

@@ -4,14 +4,12 @@ require('mocha');
 var path = require('path');
 var assert = require('assert');
 var fields = require('..');
-var config = require('base-config');
 var assemble = require('assemble-core');
 var app;
 
 describe('.map.create', function() {
   beforeEach(function() {
     app = assemble();
-    app.use(config());
     app.use(fields());
   });
 
@@ -44,7 +42,7 @@ describe('.map.create', function() {
       app.config.process({
         create: {
           pages: { foo: 'bar' },
-          posts: { foo: 'bar' },
+          posts: { foo: 'bar' }
         }
       }, function(err) {
         if (err) return cb(err);

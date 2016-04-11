@@ -11,8 +11,23 @@ var base;
 describe('options.omit', function() {
   it('should omit the give key from the result', function(cb) {
     base = new Base();
+    base.isApp = true;
     base.use(config());
     base.use(schema({omit: 'toc'}));
+    base.config.map('toc', function(val, key, config, next) {
+      config[key] = 'foo';
+      next();
+    });
+
+    base.config.process({toc: true}, function(err, config) {
+      if (err) return cb(err);
+      assert.equal(typeof config.toc, 'undefined');
+      cb();
+    });
+  });
+
+  it('should omit the give key from the result when defined on options', function(cb) {
+    base.option('schema.omit', 'toc');
     base.config.map('toc', function(val, key, config, next) {
       config[key] = 'foo';
       next();
@@ -29,6 +44,7 @@ describe('options.omit', function() {
 describe('.config.schema', function() {
   beforeEach(function() {
     base = new Base();
+    base.isApp = true;
     base.use(config());
     base.use(schema());
   });

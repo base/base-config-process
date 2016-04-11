@@ -2,8 +2,7 @@
 
 require('mocha');
 var assert = require('assert');
-var schema = require('..');
-var config = require('base-config');
+var config = require('..');
 var data = require('base-data');
 var Base = require('base');
 var base;
@@ -11,8 +10,8 @@ var base;
 describe('.map.data', function() {
   beforeEach(function() {
     base = new Base();
+    base.isApp = true;
     base.use(config());
-    base.use(schema());
   });
 
   describe('data', function() {
