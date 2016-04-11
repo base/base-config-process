@@ -14,7 +14,7 @@ describe('.config', function() {
 
       var count = 0;
       base.on('plugin', function(name) {
-        if (name === 'base-config-commands') {
+        if (name === 'base-config-process') {
           count++;
         }
       });

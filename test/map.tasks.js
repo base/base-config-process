@@ -15,6 +15,14 @@ describe('.map.tasks', function() {
   });
 
   describe('tasks', function() {
+    it('should remove empty tasks array', function(cb) {
+      base.config.process({tasks: []}, function(err, config) {
+        if (err) return cb(err);
+        assert.equal(typeof config.tasks, 'undefined');
+        cb();
+      });
+    });
+
     it('should arrayify tasks', function(cb) {
       base.config.process({tasks: 'foo'}, function(err, config) {
         if (err) return cb(err);
