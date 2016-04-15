@@ -1,6 +1,7 @@
 'use strict';
 
 require('mocha');
+var path = require('path');
 var assert = require('assert');
 var config = require('..');
 var Base = require('base');
@@ -15,12 +16,10 @@ describe('.map.cwd', function() {
 
   describe('cwd', function() {
     it('should set a cwd on app', function(cb) {
-      assert.equal(typeof base.cwd, 'undefined');
-
-      base.config.process({cwd: process.cwd()}, function(err) {
+      base.config.process({cwd: 'test'}, function(err) {
         if (err) return cb(err);
 
-        assert.equal(base.cwd, process.cwd());
+        assert.equal(base.cwd, path.join(process.cwd(), 'test'));
         cb();
       });
     });
