@@ -17,6 +17,9 @@ module.exports = function(options) {
     var opts = createOpts(app, options);
     var schema;
 
+    if (typeof this.cwd === 'undefined') {
+      this.use(utils.cwd(opts));
+    }
     if (typeof this.option === 'undefined') {
       this.use(utils.option(opts));
     }

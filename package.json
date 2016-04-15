@@ -23,6 +23,7 @@
   "dependencies": {
     "base-config": "^0.5.2",
     "base-config-schema": "^0.1.3",
+    "base-cwd": "^0.1.6",
     "base-option": "^0.7.0",
     "debug": "^2.2.0",
     "export-files": "^2.1.1",
