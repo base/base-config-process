@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "base-config": "^0.5.2",
-    "base-config-schema": "^0.1.3",
+    "base-config-schema": "^0.1.5",
     "base-cwd": "^0.1.6",
     "base-option": "^0.7.0",
     "debug": "^2.2.0",
@@ -31,7 +31,7 @@
     "mixin-deep": "^1.1.3"
   },
   "devDependencies": {
-    "assemble-core": "^0.16.0",
+    "assemble-core": "^0.16.1",
     "base": "^0.8.1",
     "base-data": "^0.4.0",
     "base-pipeline": "^0.2.5",
@@ -39,12 +39,12 @@
     "gulp": "^3.9.1",
     "gulp-eslint": "^2.0.0",
     "gulp-format-md": "^0.1.7",
-    "gulp-istanbul": "^0.10.3",
+    "gulp-istanbul": "^0.10.4",
     "gulp-mocha": "^2.2.0",
     "gulp-unused": "^0.1.2",
     "helper-coverage": "^0.1.3",
     "helper-example": "^0.1.0",
-    "map-schema": "^0.2.2",
+    "map-schema": "^0.2.3",
     "mocha": "^2.4.5"
   },
   "keywords": [
@@ -65,15 +65,15 @@
     ],
     "related": {
       "list": [
+        "base-cli",
         "base-config",
-        "base-config-schema",
-        "base-cli"
+        "base-config-schema"
       ]
     },
     "reflinks": [
-      "verb",
+      "base-config",
       "base-config-schema",
-      "base-config"
+      "verb"
     ],
     "lint": {
       "reflinks": true
