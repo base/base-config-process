@@ -51,8 +51,9 @@ module.exports = function(options) {
       var defaults = {
         sortArrays: false,
         omitEmpty: true,
-        keys: ['run', 'toc', 'layout', 'tasks', 'options', 'data', 'plugins', 'related', 'reflinks']
+        keys: ['init', 'run', 'toc', 'layout', 'tasks', 'options', 'data', 'plugins', 'related', 'reflinks']
       };
+
       var obj = this.schema.normalize(config, createOpts(app, options, defaults));
 
       debug('processing config object', obj);
