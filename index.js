@@ -58,7 +58,10 @@ module.exports = function(options) {
 
       debug('processing config object', obj);
       fn.call(this, obj, function(err) {
-        if (err) return cb(err);
+        if (err) {
+          cb(err);
+          return;
+        }
         cb(null, obj);
       });
     };

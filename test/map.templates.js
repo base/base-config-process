@@ -35,6 +35,35 @@ describe('.map.templates', function() {
   });
 
   describe('templates', function() {
+    it('should move config.templates to config.views', function(cb) {
+      app.config.process({
+        templates: {
+          posts: './test/fixtures/templates/*',
+          pages: './test/fixtures/templates/*'
+        }
+      }, function(err, config) {
+        if (err) return cb(err);
+        assert(config.views.posts.hasOwnProperty('test/fixtures/templates/foo.md'));
+        assert(config.views.posts.hasOwnProperty('test/fixtures/templates/bar.hbs'));
+        assert(config.views.pages.hasOwnProperty('test/fixtures/templates/foo.md'));
+        assert(config.views.pages.hasOwnProperty('test/fixtures/templates/bar.hbs'));
+        cb();
+      });
+    });
+
+    it('should delete config.templates after moving to config.views', function(cb) {
+      app.config.process({
+        templates: {
+          posts: './test/fixtures/templates/*',
+          pages: './test/fixtures/templates/*'
+        }
+      }, function(err, config) {
+        if (err) return cb(err);
+        assert(!config.hasOwnProperty('templates'));
+        cb();
+      });
+    });
+
     it('should add templates to a new collection from a glob', function(cb) {
       app.config.process({
         templates: {
