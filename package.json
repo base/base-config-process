@@ -22,9 +22,9 @@
   },
   "dependencies": {
     "base-config": "^0.5.2",
-    "base-config-schema": "^0.1.12",
+    "base-config-schema": "^0.1.13",
     "base-cwd": "^0.2.0",
-    "base-option": "^0.7.0",
+    "base-option": "^0.8.2",
     "debug": "^2.2.0",
     "export-files": "^2.1.1",
     "lazy-cache": "^2.0.1",
@@ -48,10 +48,14 @@
     "mocha": "^2.5.1"
   },
   "keywords": [
+    "args",
     "base",
+    "base-config",
     "baseplugin",
+    "cli",
     "commands",
-    "config"
+    "config",
+    "normalize"
   ],
   "verb": {
     "run": true,
