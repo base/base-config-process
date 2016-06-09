@@ -10,8 +10,7 @@ var utils = require('./lib/utils');
 
 module.exports = function(options) {
   return function plugin(app, base) {
-    if (!this.isApp) return;
-    if (this.isRegistered('base-config-process')) return;
+    if (!utils.isValid(app, 'base-config-process')) return;
     debug('initializing <%s>, called from <%s>', __filename, module.parent.id);
 
     var opts = createOpts(app, options);

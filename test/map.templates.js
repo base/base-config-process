@@ -43,10 +43,10 @@ describe('.map.templates', function() {
         }
       }, function(err, config) {
         if (err) return cb(err);
-        assert(config.views.posts.hasOwnProperty('test/fixtures/templates/foo.md'));
-        assert(config.views.posts.hasOwnProperty('test/fixtures/templates/bar.hbs'));
-        assert(config.views.pages.hasOwnProperty('test/fixtures/templates/foo.md'));
-        assert(config.views.pages.hasOwnProperty('test/fixtures/templates/bar.hbs'));
+        assert(config.views.posts.hasOwnProperty('foo.md'));
+        assert(config.views.posts.hasOwnProperty('bar.hbs'));
+        assert(config.views.pages.hasOwnProperty('foo.md'));
+        assert(config.views.pages.hasOwnProperty('bar.hbs'));
         cb();
       });
     });
@@ -72,10 +72,10 @@ describe('.map.templates', function() {
         }
       }, function(err, config) {
         if (err) return cb(err);
-        assert(app.views.posts.hasOwnProperty('test/fixtures/templates/foo.md'));
-        assert(app.views.posts.hasOwnProperty('test/fixtures/templates/bar.hbs'));
-        assert(app.views.pages.hasOwnProperty('test/fixtures/templates/foo.md'));
-        assert(app.views.pages.hasOwnProperty('test/fixtures/templates/bar.hbs'));
+        assert(app.views.posts.hasOwnProperty('foo.md'));
+        assert(app.views.posts.hasOwnProperty('bar.hbs'));
+        assert(app.views.pages.hasOwnProperty('foo.md'));
+        assert(app.views.pages.hasOwnProperty('bar.hbs'));
         cb();
       });
     });
@@ -88,10 +88,10 @@ describe('.map.templates', function() {
         }
       }, function(err, config) {
         if (err) return cb(err);
-        assert(app.views.posts.hasOwnProperty('test/fixtures/templates/foo.md'));
-        assert(app.views.posts.hasOwnProperty('test/fixtures/templates/bar.hbs'));
-        assert(app.views.pages.hasOwnProperty('test/fixtures/templates/foo.md'));
-        assert(app.views.pages.hasOwnProperty('test/fixtures/templates/bar.hbs'));
+        assert(app.views.posts.hasOwnProperty('foo.md'));
+        assert(app.views.posts.hasOwnProperty('bar.hbs'));
+        assert(app.views.pages.hasOwnProperty('foo.md'));
+        assert(app.views.pages.hasOwnProperty('bar.hbs'));
         cb();
       });
     });
@@ -111,12 +111,12 @@ describe('.map.templates', function() {
       }, function(err, config) {
         if (err) return cb(err);
         assert(app.views.foos.hasOwnProperty('one'));
-        assert(app.views.foos.hasOwnProperty('test/fixtures/templates/foo.md'));
-        assert(app.views.foos.hasOwnProperty('test/fixtures/templates/bar.hbs'));
+        assert(app.views.foos.hasOwnProperty('foo.md'));
+        assert(app.views.foos.hasOwnProperty('bar.hbs'));
 
         assert(app.views.bars.hasOwnProperty('two'));
-        assert(app.views.bars.hasOwnProperty('test/fixtures/templates/foo.md'));
-        assert(app.views.bars.hasOwnProperty('test/fixtures/templates/bar.hbs'));
+        assert(app.views.bars.hasOwnProperty('foo.md'));
+        assert(app.views.bars.hasOwnProperty('bar.hbs'));
         cb();
       });
     });
@@ -136,12 +136,12 @@ describe('.map.templates', function() {
       }, function(err, config) {
         if (err) return cb(err);
         assert(app.views.foos.hasOwnProperty('one'));
-        assert(app.views.foos.hasOwnProperty('test/fixtures/templates/foo.md'));
-        assert(app.views.foos.hasOwnProperty('test/fixtures/templates/bar.hbs'));
+        assert(app.views.foos.hasOwnProperty('foo.md'));
+        assert(app.views.foos.hasOwnProperty('bar.hbs'));
 
         assert(app.views.bars.hasOwnProperty('two'));
-        assert(app.views.bars.hasOwnProperty('test/fixtures/templates/foo.md'));
-        assert(app.views.bars.hasOwnProperty('test/fixtures/templates/bar.hbs'));
+        assert(app.views.bars.hasOwnProperty('foo.md'));
+        assert(app.views.bars.hasOwnProperty('bar.hbs'));
         cb();
       });
     });
