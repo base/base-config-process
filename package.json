@@ -80,6 +80,9 @@
     "tasks": [
       "readme"
     ],
+    "middleware": {
+      "prePipeline": ["verb-reflinks"]
+    },
     "plugins": [
       "gulp-format-md"
     ],
