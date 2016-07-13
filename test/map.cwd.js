@@ -7,6 +7,8 @@ var config = require('..');
 var Base = require('base');
 var base;
 
+var cwd = process.cwd();
+
 describe('.map.cwd', function() {
   beforeEach(function() {
     base = new Base();
@@ -41,7 +43,7 @@ describe('.map.cwd', function() {
 
     it('should not take action when give cwd is the same as existing', function(cb) {
       var count = 0;
-
+      base.cwd = process.cwd();
       base.on('cwd', function(val) {
         count++;
       });
