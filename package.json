@@ -23,13 +23,14 @@
   },
   "dependencies": {
     "base-config": "^0.5.2",
-    "base-config-schema": "^0.1.15",
-    "base-cwd": "^0.3.1",
+    "base-config-schema": "^0.1.18",
+    "base-cwd": "^0.3.4",
     "base-option": "^0.8.4",
     "debug": "^2.2.0",
     "export-files": "^2.1.1",
     "is-valid-app": "^0.2.0",
     "lazy-cache": "^2.0.1",
+    "micromatch": "^2.3.10",
     "mixin-deep": "^1.1.3"
   },
   "devDependencies": {
@@ -47,7 +48,8 @@
     "helper-coverage": "^0.1.3",
     "helper-example": "^0.1.0",
     "map-schema": "^0.2.3",
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "verb-reflinks": "^0.1.1"
   },
   "keywords": [
     "api",
